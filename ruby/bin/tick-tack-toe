@@ -13,4 +13,4 @@ require "bundler/setup"
 require "tick_tack_toe"
 
 
-puts "No implementation of Tick Tack Toe yet."
+::TickTackToe::Cli.new.call
