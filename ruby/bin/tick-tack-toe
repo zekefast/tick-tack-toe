@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 
 puts "No implementation of Tick Tack Toe yet."
