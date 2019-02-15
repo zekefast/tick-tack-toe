@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+# GOTCHA: uncomment in case of debugging current script.
+# See more details at https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
+#set -vx
+
+bundle install
+
+# Do any other automated setup that you need to do here
