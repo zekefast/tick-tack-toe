@@ -1,5 +1,16 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+# GOTCHA: Add project's lib directory to load path. So we can require files
+#   from lib directory.
+LIB_DIR_PATH = File.expand_path(File.join(__dir__, "..", "lib"))
+$LOAD_PATH.unshift(LIB_DIR_PATH) unless $LOAD_PATH.include?(LIB_DIR_PATH)
+
+# GOTCHA: Initialize Bundler. So we can require files from gems declared in
+#   Gemfile.
+require "bundler/setup"
+
+require "tick_tack_toe"
+
 
 puts "No implementation of Tick Tack Toe yet."
