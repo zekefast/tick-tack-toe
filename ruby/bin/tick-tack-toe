@@ -13,4 +13,5 @@ require "bundler/setup"
 require "tick_tack_toe"
 
 
-::TickTackToe::Cli.new.call
+# Launch command line interface
+::TickTackToe::Container.new.cli.call
