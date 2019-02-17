@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 # Purpose: namespace
+#
+# Namespace for TickTackToe set of classes and modules.
 module ::TickTackToe
 end
 
