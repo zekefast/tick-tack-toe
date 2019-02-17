@@ -33,7 +33,8 @@ class ::TickTackToe::Container
   def cli
     ::TickTackToe::Cli.new(
       board_printer,
-      method(:player)
+      method(:player),
+      method(:game)
     )
   end
 end
