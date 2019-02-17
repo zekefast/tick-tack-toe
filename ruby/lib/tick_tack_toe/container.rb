@@ -21,6 +21,14 @@ class ::TickTackToe::Container
     ::TickTackToe::Player.new(sign, name)
   end
 
+  # @param cross_player [::TickTackToe::Player]
+  # @param zero_player  [::TickTackToe::Player]
+  #
+  # @return [::TickTackToe::Game]
+  def game(cross_player, zero_player)
+    ::TickTackToe::Game.new(board, cross_player, zero_player)
+  end
+
   # @return [::TickTackToe::Cli]
   def cli
     ::TickTackToe::Cli.new(
