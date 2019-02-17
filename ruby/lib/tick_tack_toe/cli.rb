@@ -42,6 +42,12 @@ class ::TickTackToe::Cli
 
     @board_printer.call(game.board)
 
+    # TODO: replace with reading real moves from player's input
+    game.board.set(::TickTackToe::Position.new(1, 1), ::TickTackToe::Board::CROSS_CELL)
+    game.board.set(::TickTackToe::Position.new(0, 0), ::TickTackToe::Board::ZERO_CELL)
+
+    @board_printer.call(game.board)
+
     self
   end
 
