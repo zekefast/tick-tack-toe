@@ -5,3 +5,6 @@ class ::TickTackToe::Cli
     puts "No implementation of Tick Tack Toe yet."
   end
 end
+
+
+require "tick_tack_toe/cli/board_printer"
