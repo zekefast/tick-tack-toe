@@ -6,3 +6,5 @@ end
 
 
 require "tick_tack_toe/cli"
+
+require "tick_tack_toe/container"
