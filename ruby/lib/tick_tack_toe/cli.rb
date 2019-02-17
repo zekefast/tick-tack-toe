@@ -26,7 +26,14 @@ class ::TickTackToe::Cli
 
   # @return [self]
   def call
-    puts "No implementation of Tick Tack Toe yet."
+    banner
+
+    self
+  end
+
+  # @return [self]
+  def banner
+    puts "\n  Tick Tack Toe\n\n"
 
     self
   end
