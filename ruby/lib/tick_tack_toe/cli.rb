@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 class ::TickTackToe::Cli
+  # @!attribute [r] CROSS_CELL
+  #   @return [String]
+  CROSS_SIGN = "X"
+  # @!attribute [r] ZERO_CELL
+  #   @return [String]
+  ZERO_SIGN  = "0"
+
   # @!attribute [r] board_printer
   #   @return [#call]
   # @!attribute [r] player_factory

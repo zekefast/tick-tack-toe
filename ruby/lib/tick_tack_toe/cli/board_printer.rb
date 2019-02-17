@@ -11,10 +11,71 @@
 #   2 |   |   |   |
 #     ~~~~~~~~~~~~~
 class ::TickTackToe::Cli::BoardPrinter
+  # @!attribute [r] ROW_SEPARATOR
+  #   @return [String]
+  ROW_SEPARATOR    = "~"
+
+  # @!attribute [r] COLUMN_SEPARATOR
+  #   @return [String]
+  COLUMN_SEPARATOR = "|"
+
+  # @!attribute [r] SIGN_MAP
+  #   @return [Hash{Integer=>String}]
+  SIGN_MAP = {
+    ::TickTackToe::Board::CROSS_CELL => ::TickTackToe::Cli::CROSS_SIGN,
+    ::TickTackToe::Board::ZERO_CELL  => ::TickTackToe::Cli::ZERO_SIGN,
+    ::TickTackToe::Board::EMPTY_CELL => " ",
+  }
+
+  # @param board_size [Integer]
+  #
+  # @return [void]
+  def header(board_size)
+    puts
+    print("\\x ")
+    board_size.times { |i| print(" #{i}  ") }
+    puts
+  end
+
+  # @param board_size [Integer]
+  # @param prefix     [String] ("  ")
+  #
+  # @return [void]
+  def separator(board_size, prefix = "  ")
+    print(prefix)
+    print(ROW_SEPARATOR*(1 + board_size*4))
+    puts
+  end
+
+  # @param board [::TickTackToe::Board]
+  # @param index [Integer]
+  #
+  # @return [void]
+  def row(board, index)
+    print "#{index} #{COLUMN_SEPARATOR}"
+    board.size.times do |j|
+      print " #{SIGN_MAP[board.get(::TickTackToe::Position.new(index, j))]} #{COLUMN_SEPARATOR}"
+    end
+    puts
+  end
+
+  # @return [void]
+  def footer
+    puts
+  end
+
   # @param board [::TickTackToe::Board]
   #
   # @return [self]
   def call(board)
+    header(board.size)
+    separator(board.size, "y\\")
+    board.size.times do |row_index|
+      row(board, row_index)
+      separator(board.size)
+    end
+    footer
+
     self
   end
 end
