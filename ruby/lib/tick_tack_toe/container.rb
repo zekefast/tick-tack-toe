@@ -13,6 +13,8 @@ class ::TickTackToe::Container
 
   # @return [::TickTackToe::Cli]
   def cli
-    ::TickTackToe::Cli.new
+    ::TickTackToe::Cli.new(
+      board_printer
+    )
   end
 end
