@@ -24,7 +24,8 @@ class ::TickTackToe::Container
   # @return [::TickTackToe::Cli]
   def cli
     ::TickTackToe::Cli.new(
-      board_printer
+      board_printer,
+      method(:player)
     )
   end
 end

@@ -3,15 +3,20 @@
 class ::TickTackToe::Cli
   # @!attribute [r] board_printer
   #   @return [#call]
+  # @!attribute [r] player_factory
+  #   @return [#call]
   attr_reader \
-    :board_printer
+    :board_printer,
+    :player_factory
 
 
   # @param board_printer  [#call]
+  # @param player_factory [#call]
   #
   # @return [void]
-  def initialize(board_printer)
+  def initialize(board_printer, player_factory)
     @board_printer  = board_printer
+    @player_factory = player_factory
   end
 
   # @return [self]
