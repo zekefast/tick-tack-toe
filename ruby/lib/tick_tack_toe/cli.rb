@@ -35,6 +35,13 @@ class ::TickTackToe::Cli
   def call
     banner
 
+    game = @game_factory.call(
+      create_player(CROSS_SIGN),
+      create_player(ZERO_SIGN)
+    )
+
+    @board_printer.call(game.board)
+
     self
   end
 
@@ -43,6 +50,15 @@ class ::TickTackToe::Cli
     puts "\n  Tick Tack Toe\n\n"
 
     self
+  end
+
+  # @param sign [String]
+  #
+  # @return [::TickTackToe::Player]
+  def create_player(sign)
+    print "Enter name of #{sign} player: "
+
+    @player_factory.call(sign, gets.chomp)
   end
 end
 
