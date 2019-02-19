@@ -1,13 +1,6 @@
 # frozen_string_literal: true
 
 class ::TickTackToe::Cli
-  # @!attribute [r] CROSS_CELL
-  #   @return [String]
-  CROSS_SIGN = "X"
-  # @!attribute [r] ZERO_CELL
-  #   @return [String]
-  ZERO_SIGN  = "0"
-
   # @!attribute [r] board_printer
   #   @return [#call]
   # @!attribute [r] player_factory
@@ -36,15 +29,15 @@ class ::TickTackToe::Cli
     banner
 
     game = @game_factory.call(
-      create_player(CROSS_SIGN),
-      create_player(ZERO_SIGN)
+      create_player(::TickTackToe::CROSS_SIGN),
+      create_player(::TickTackToe::ZERO_SIGN)
     )
 
     @board_printer.call(game.board)
 
     # TODO: replace with reading real moves from player's input
-    game.board.set(::TickTackToe::Position.new(1, 1), ::TickTackToe::Board::CROSS_CELL)
-    game.board.set(::TickTackToe::Position.new(0, 0), ::TickTackToe::Board::ZERO_CELL)
+    game.board.set(::TickTackToe::Position.new(1, 1), ::TickTackToe::CROSS_BOARD_CELL_MARK)
+    game.board.set(::TickTackToe::Position.new(0, 0), ::TickTackToe::ZERO_BOARD_CELL_MARK)
 
     @board_printer.call(game.board)
 

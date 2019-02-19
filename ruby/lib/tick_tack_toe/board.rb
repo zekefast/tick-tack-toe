@@ -5,22 +5,12 @@ class ::TickTackToe::Board
   #   @return [Integer]
   STANDARD_SIZE = 3
 
-  # @!attribute [r] EMPTY_CELL
-  #   @return [Integer]
-  EMPTY_CELL = 0
-  # @!attribute [r] CROSS_CELL
-  #   @return [Integer]
-  CROSS_CELL = 1
-  # @!attribute [r] ZERO_CELL
-  #   @return [Integer]
-  ZERO_CELL  = -1
-
 
   # @param size [Integer]
   #
   # @return [void]
   def initialize(size)
-    @field = Array.new(size) { Array.new(size, EMPTY_CELL) }
+    @field = Array.new(size) { Array.new(size, ::TickTackToe::EMPTY_BOARD_CELL_MARK) }
   end
 
   # @return [Integer]
@@ -29,11 +19,11 @@ class ::TickTackToe::Board
   end
 
   # @param position [::TickTackToe::Position]
-  # @param sign     [Integer]
+  # @param mark     [Integer]
   #
   # @return [self]
-  def set(position, sign)
-    @field[position.x][position.y] = sign
+  def set(position, mark)
+    @field[position.x][position.y] = mark
 
     self
   end

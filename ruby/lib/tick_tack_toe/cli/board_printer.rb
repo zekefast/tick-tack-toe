@@ -19,13 +19,6 @@ class ::TickTackToe::Cli::BoardPrinter
   #   @return [String]
   COLUMN_SEPARATOR = "|"
 
-  # @!attribute [r] SIGN_MAP
-  #   @return [Hash{Integer=>String}]
-  SIGN_MAP = {
-    ::TickTackToe::Board::CROSS_CELL => ::TickTackToe::Cli::CROSS_SIGN,
-    ::TickTackToe::Board::ZERO_CELL  => ::TickTackToe::Cli::ZERO_SIGN,
-    ::TickTackToe::Board::EMPTY_CELL => " ",
-  }
 
   # @param board_size [Integer]
   #
@@ -54,7 +47,7 @@ class ::TickTackToe::Cli::BoardPrinter
   def row(board, index)
     print "#{index} #{COLUMN_SEPARATOR}"
     board.size.times do |j|
-      print " #{SIGN_MAP[board.get(::TickTackToe::Position.new(index, j))]} #{COLUMN_SEPARATOR}"
+      print " #{::TickTackToe::MARK2SIGN_MAP[board.get(::TickTackToe::Position.new(j, index))]} #{COLUMN_SEPARATOR}"
     end
     puts
   end
