@@ -33,6 +33,17 @@ module ::TickTackToe
   #   @return [Integer]
   ZERO_BOARD_CELL_MARK  = -1
 
+  # @!attribute [r] SIGN2MARK_MAP
+  #   @return [Hash{String=>Integer}]
+  SIGN2MARK_MAP = {
+    # GOTCHA: this mapping is present here only for symmetry, but does not
+    #   actually used as there is no user which can make a move with
+    #   EMPTY_SIGN.
+    EMPTY_SIGN => EMPTY_BOARD_CELL_MARK,
+    CROSS_SIGN => CROSS_BOARD_CELL_MARK,
+    ZERO_SIGN  => ZERO_BOARD_CELL_MARK,
+  }.freeze
+
   # @!attribute [r] MARK2SIGN_MAP
   #   @return [Hash{Integer=>String}]
   MARK2SIGN_MAP = {

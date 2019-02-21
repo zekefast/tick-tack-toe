@@ -5,17 +5,22 @@ class ::TickTackToe::Player
   #   @return [String]
   # @!attribute [r] name
   #   @return [String]
+  # @!attribute [r] mark
+  #   @return [Integer]
   attr_reader \
     :sign,
-    :name
+    :name,
+    :mark
 
 
   # @param sign [String]
   # @param name [String]
+  # @param mark [Integer]
   #
   # @return [void]
-  def initialize(sign, name)
+  def initialize(sign, name, mark)
     @sign = sign
     @name = name
+    @mark = mark
   end
 end
