@@ -58,6 +58,23 @@ module ::TickTackToe
     CROSS_SIGN,
     ZERO_SIGN,
   ].freeze
+
+
+  class << self
+    # @param sign [String]
+    #
+    # @return [Integer]
+    def sign2mark(sign)
+      SIGN2MARK_MAP[sign]
+    end
+
+    # @param mark [Integer]
+    #
+    # @return [String]
+    def mark2sign(mark)
+      MARK2SIGN_MAP[mark]
+    end
+  end
 end
 
 

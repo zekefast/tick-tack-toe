@@ -47,7 +47,7 @@ class ::TickTackToe::Cli::BoardPrinter
   def row(board, index)
     print "#{index} #{COLUMN_SEPARATOR}"
     board.size.times do |j|
-      print " #{::TickTackToe::MARK2SIGN_MAP[board.get(::TickTackToe::Position.new(j, index))]} #{COLUMN_SEPARATOR}"
+      print " #{::TickTackToe.mark2sign(board.get(::TickTackToe::Position.new(j, index)))} #{COLUMN_SEPARATOR}"
     end
     puts
   end

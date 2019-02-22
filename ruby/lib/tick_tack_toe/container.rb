@@ -18,7 +18,7 @@ class ::TickTackToe::Container
   def player(sign, name)
     # GOTCHA: As player requires a name to be instantiated we add parameter
     #   parameters to creation method to provide them later from user's intput.
-    ::TickTackToe::Player.new(sign, name, ::TickTackToe::SIGN2MARK_MAP[sign])
+    ::TickTackToe::Player.new(sign, name, ::TickTackToe.sign2mark(sign))
   end
 
   # @param players [Array<::TickTackToe::Player>]
