@@ -78,6 +78,9 @@ module ::TickTackToe
 end
 
 
+require "tick_tack_toe/error"
+require "tick_tack_toe/standard_error"
+
 require "tick_tack_toe/position"
 require "tick_tack_toe/player"
 require "tick_tack_toe/board"
