@@ -18,4 +18,14 @@ class ::TickTackToe::Game
     @board   = board
     @players = players
   end
+
+  # @return [::TickTackToe::Player] winner of the game
+  #
+  # @yieldparam player [::TickTackToe::Player]
+  # @yieldreturn [::TickTackToe::Position]
+  def move
+    players.cycle do |player|
+      @board.set(yield(player), player.mark)
+    end
+  end
 end

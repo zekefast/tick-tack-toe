@@ -30,13 +30,17 @@ class ::TickTackToe::Cli
 
     game = @game_factory.call(::TickTackToe::PLAYERS_SIGNS_LIST.map(&method(:create_player)))
 
-    @board_printer.call(game.board)
+    puts "\n#{::TickTackToe::PLAYERS_SIGNS_LIST.first} moves first.\n\n"
 
-    # TODO: replace with reading real moves from player's input
-    game.board.set(::TickTackToe::Position.new(1, 1), ::TickTackToe::CROSS_BOARD_CELL_MARK)
-    game.board.set(::TickTackToe::Position.new(0, 0), ::TickTackToe::ZERO_BOARD_CELL_MARK)
+    winner = game.move do |player|
+      @board_printer.call(game.board)
+    end
 
-    @board_printer.call(game.board)
+    if winner.nil?
+      puts "No winners! You had a draw game!\n\n"
+    else
+      puts "Congratulations, #{winner.name} (#{winner.sign})! You won!\n\n"
+    end
 
     self
   end
