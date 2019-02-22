@@ -34,6 +34,7 @@ class ::TickTackToe::Cli
 
     winner = game.move do |player|
       @board_printer.call(game.board)
+      ask_for_move(player, game.board.size) { |position| game.board.free?(position) }
     end
 
     if winner.nil?
@@ -59,6 +60,62 @@ class ::TickTackToe::Cli
     print "Enter name of #{sign} player: "
 
     @player_factory.call(sign, gets.chomp)
+  end
+
+  # @param player     [::TickTackToe::Player]
+  # @param board_size [Integer]
+  #
+  # @return [::TickTackToe::Position]
+  #
+  # @yieldparam position [::TickTackToe::Position] position on the board to
+  #   check whether it is free.
+  # @yieldreturn [Boolean]
+  def ask_for_move(player, board_size)
+    print "#{player.name} enter coordinates (x y) separated by space where " \
+      "you want to put #{player.sign}: "
+    x, y = gets.chomp.split(/\s+/)
+
+    position = ::TickTackToe::Position.new(
+      validate_move_coordinate(board_size, :x, x),
+      validate_move_coordinate(board_size, :y, y)
+    )
+
+    raise ::TickTackToe::OccupiedCellError.occupied_cell_error(position) unless yield(position)
+
+    position
+  rescue ::TickTackToe::Error => e
+    puts "Invalid input: #{e.message}"
+
+    retry
+  end
+
+  # @param board_size       [Integer]
+  # @param coordinate_name  [Symbol]
+  # @param coordinate_value [String]
+  #
+  # @return [Integer]
+  #
+  # @raise [::TickTackToe::ValidationError] when given coordinate value is not
+  #   a valid integer value.
+  # @raise [::TickTackToe::ValidationError] when given coordinate value is a
+  #   valid integer value, but does not correspond to columns or rows on the
+  #   board, meaning it is higher then size of the board or lower then
+  #   zero(first column or row).
+  def validate_move_coordinate(board_size, coordinate_name, coordinate_value)
+    int_coordinate = begin
+      Integer(coordinate_value)
+    rescue TypeError, ArgumentError => e
+      raise ::TickTackToe::ValidationError.
+        coordinate_is_not_an_integer_error(coordinate_name, coordinate_value)
+    end
+
+    if int_coordinate < 0 || int_coordinate >= board_size
+      raise ::TickTackToe::ValidationError.
+        coordinate_are_outside_of_playable_area(
+          board_size, coordinate_name, int_coordinate)
+    end
+
+    int_coordinate
   end
 end
 
