@@ -21,12 +21,11 @@ class ::TickTackToe::Container
     ::TickTackToe::Player.new(sign, name, ::TickTackToe::SIGN2MARK_MAP[sign])
   end
 
-  # @param cross_player [::TickTackToe::Player]
-  # @param zero_player  [::TickTackToe::Player]
+  # @param players [Array<::TickTackToe::Player>]
   #
   # @return [::TickTackToe::Game]
-  def game(cross_player, zero_player)
-    ::TickTackToe::Game.new(board, cross_player, zero_player)
+  def game(players)
+    ::TickTackToe::Game.new(board, players)
   end
 
   # @return [::TickTackToe::Cli]

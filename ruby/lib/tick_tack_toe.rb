@@ -51,6 +51,13 @@ module ::TickTackToe
     CROSS_BOARD_CELL_MARK => CROSS_SIGN,
     ZERO_BOARD_CELL_MARK  => ZERO_SIGN,
   }.freeze
+
+  # @!attribute [r] PLAYERS_SIGNS_LIST
+  #   @return [Array<String>]
+  PLAYERS_SIGNS_LIST = [
+    CROSS_SIGN,
+    ZERO_SIGN,
+  ].freeze
 end
 
 

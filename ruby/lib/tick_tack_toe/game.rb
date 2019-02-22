@@ -3,24 +3,19 @@
 class ::TickTackToe::Game
   # @!attribute [r] board
   #   @return [::TickTackToe::Board]
-  # @!attribute [r] cross_player
-  #   @return [::TickTackToe::Player]
-  # @!attribute [r] zero_player
-  #   @return [::TickTackToe::Player]
+  # @!attribute [r] playes
+  #   @return [Array<::TickTackToe::Player>]
   attr_reader \
     :board,
-    :cross_player,
-    :zero_player
+    :players
 
 
-  # @param board        [::TickTackToe::Board]
-  # @param cross_player [::TickTackToe::Player]
-  # @param zero_player  [::TickTackToe::Player]
+  # @param board   [::TickTackToe::Board]
+  # @param players [Array<::TickTackToe::Player>]
   #
   # @return [void]
-  def initialize(board, cross_player, zero_player)
-    @board        = board
-    @cross_player = cross_player
-    @zero_player  = zero_player
+  def initialize(board, players)
+    @board   = board
+    @players = players
   end
 end

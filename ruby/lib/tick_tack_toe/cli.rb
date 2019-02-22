@@ -28,10 +28,7 @@ class ::TickTackToe::Cli
   def call
     banner
 
-    game = @game_factory.call(
-      create_player(::TickTackToe::CROSS_SIGN),
-      create_player(::TickTackToe::ZERO_SIGN)
-    )
+    game = @game_factory.call(::TickTackToe::PLAYERS_SIGNS_LIST.map(&method(:create_player)))
 
     @board_printer.call(game.board)
 
