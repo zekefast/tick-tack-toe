@@ -60,3 +60,5 @@ end
 
 
 require "tick_tack_toe/cli/board_printer"
+
+require "tick_tack_toe/cli/error"
