@@ -19,6 +19,20 @@ class ::TickTackToe::Board
   end
 
   # @param position [::TickTackToe::Position]
+  #
+  # @return [Boolean]
+  def free?(position)
+    get(position) == ::TickTackToe::EMPTY_BOARD_CELL_MARK
+  end
+
+  # @param position [::TickTackToe::Position]
+  #
+  # @return [Boolean]
+  def occupied?(position)
+    !free?(position)
+  end
+
+  # @param position [::TickTackToe::Position]
   # @param mark     [Integer]
   #
   # @return [self]
