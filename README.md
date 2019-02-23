@@ -47,7 +47,7 @@ of the game the current game board should be displayed like so:
 (this would be an example of a game before that first move has been made)
 
 After displaying the game board your game should prompt the current player
-for their move. Players will enter their moves int he form of coordinates.
+for their move. Players will enter their moves in the form of coordinates.
 For example if a player enters `1 1` then their mark (either X or O) will
 be placed in the upper left corner. The x (horizontal) coordinate is the
 first number and the y (vertical) coordinate is the second number that will
