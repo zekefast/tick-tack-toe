@@ -103,3 +103,7 @@ AI that never loses.
 This is a list of languages used for implementation of the game. If you don't
 know distinctions of particular language read article on Wikipedia and spend
 some time reading materials on official website.
+
+* [Ruby](ruby/):
+  [Wikipedia](https://en.wikipedia.org/wiki/Ruby_(programming_language)),
+  [Official Site](https://www.ruby-lang.org/)
