@@ -83,6 +83,8 @@ require "tick_tack_toe/standard_error"
 require "tick_tack_toe/validation_error"
 require "tick_tack_toe/occupied_cell_error"
 
+require "tick_tack_toe/util"
+
 require "tick_tack_toe/position"
 require "tick_tack_toe/player"
 require "tick_tack_toe/board"
