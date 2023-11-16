@@ -3,9 +3,11 @@ GEM
   specs:
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
 
+CHECKSUMS
+
 BUNDLED WITH
-   1.17.2
+   2.5.0.dev
