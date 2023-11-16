@@ -26,7 +26,7 @@ module ::TickTackToe::Util::ReverseRange
     end
 
     def each(&block)
-      return first.downto(last, &block) first.respond_to?(:pred) && reverse?
+      return first.downto(last, &block) if first.respond_to?(:pred) && reverse?
 
       super
     end
