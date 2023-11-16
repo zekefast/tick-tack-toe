@@ -37,6 +37,8 @@ class ::TickTackToe::Cli
       ask_for_move(player, game.board.size) { |position| game.board.free?(position) }
     end
 
+    @board_printer.call(game.board)
+
     if winner.nil?
       puts "No winners! You had a draw game!\n\n"
     else
