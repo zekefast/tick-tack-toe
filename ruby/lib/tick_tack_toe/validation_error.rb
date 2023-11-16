@@ -18,6 +18,6 @@ class ::TickTackToe::ValidationError < ::RuntimeError
   #
   # @return [::TickTackToe::ValidationError]
   def self.coordinate_are_outside_of_playable_area(board_size, coordinate_name, coordinate_value)
-    self.new("those coordinates are outside the playable area")
+    self.new("those coordinates are outside of the playable area")
   end
 end
