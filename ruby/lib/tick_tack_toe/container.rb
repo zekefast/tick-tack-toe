@@ -16,7 +16,7 @@ class ::TickTackToe::Container
   #
   # @return [::TickTackToe::Player]
   def player(sign, name)
-    # GOTCHA: As player requires a name to be instantiated we add parameter
+    # GOTCHA: As player requires a name to be instantiated we add
     #   parameters to creation method to provide them later from user's intput.
     ::TickTackToe::Player.new(sign, name, ::TickTackToe.sign2mark(sign))
   end
@@ -25,6 +25,8 @@ class ::TickTackToe::Container
   #
   # @return [::TickTackToe::Game]
   def game(players)
+    # GOTCHA: As game requires players to be instantiated we add
+    #   parameter to creation method to provide it later once players were instantiated.
     ::TickTackToe::Game.new(board, players)
   end
 
