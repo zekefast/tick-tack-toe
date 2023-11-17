@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Pair of x and y coordinates on the board.
 class ::TickTackToe::Position
   # @!attribute [r] x
   #   @return [Integer]

@@ -1,5 +1,17 @@
 # frozen_string_literal: true
 
+# Instantiates classes and wire dependencies between them.
+#
+# In some cases, for parametrized service points
+# (aka just container's methods), direct instantiation can't be used as
+# parameters (aka data) isn't available at the moment of dependency injection.
+# In such situations BoundMethod instance (call to method()) is captured
+# and it is injected as a factory method.
+#
+# One of such example is a player which can't be instantiated inside container
+# directly as it requires a name of the player which is requested from user.
+# So, we inject a BoundMethod instance into Cli to it can create players once
+# it received an input from user about their names.
 class ::TickTackToe::Container
   # @return [::TickTackToe::Cli::BoardPrinter]
   def board_printer

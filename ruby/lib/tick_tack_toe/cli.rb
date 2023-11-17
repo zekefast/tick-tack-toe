@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# Command line interface with user: asking players' names,
+# showing board, messaging about winner or draw, asking for a move, etc.
+#
+# All the game logic were intentionally kept to other classes and modules.
 class ::TickTackToe::Cli
   # @!attribute [r] board_printer
   #   @return [#call]

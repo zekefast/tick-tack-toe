@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
+# Contains main logic and state (players, board) of a game.
+#
+# It checks for winners or a draw.
+# All interactions with a user were purposely moved out to Cli class.
+# Usually, when interaction with a user is required it was handled by
+# yielding control and receiving a result back.
+#
+# One of the example of such yielding is ::TickTackToe::Game.move method.
+# It requires a position input from user, so it yields execution to Cli
+# class which handles interaction with a user and return back valid Position
+# instance.
 class ::TickTackToe::Game
   # @!attribute [r] board
   #   @return [::TickTackToe::Board]

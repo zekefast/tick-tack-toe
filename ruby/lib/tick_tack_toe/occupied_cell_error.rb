@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# An error for the case when user input a position on the board
+# which has been occupied already by previous moves.
 class ::TickTackToe::OccupiedCellError < ::RuntimeError
   include ::TickTackToe::Error
 

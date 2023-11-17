@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# User input validation errors.
 class ::TickTackToe::ValidationError < ::RuntimeError
   include ::TickTackToe::Error
 
