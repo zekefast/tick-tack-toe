@@ -7,7 +7,7 @@ class ::TickTackToe::OccupiedCellError < ::RuntimeError
   # @param position [::TickTackToe::Position]
   #
   # @return [::TickTackToe::OccupiedCellError]
-  def self.occupied_cell_error(position)
-    self.new("that space is already taken")
+  def self.occupied_cell_error(_position)
+    new("that space is already taken")
   end
 end

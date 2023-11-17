@@ -36,7 +36,7 @@ class ::TickTackToe::Cli::BoardPrinter
   # @return [void]
   def separator(board_size, prefix = "  ")
     print(prefix)
-    print(ROW_SEPARATOR*(1 + board_size*4))
+    print(ROW_SEPARATOR * (1 + (board_size * 4)))
     puts
   end
 

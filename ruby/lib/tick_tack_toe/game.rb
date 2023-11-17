@@ -38,13 +38,13 @@ class ::TickTackToe::Game
   end
 
   # @param player     [::TickTackToe::Player]
-  # @param position   [::TickTackToe::Position]
+  # @param new_move_position   [::TickTackToe::Position]
   #
   # @return [Boolean]
-  def won?(player, position)
-    checked_lines(position).any? do |line|
-      line.all? do |position|
-        @board.get(position) == player.mark
+  def won?(player, new_move_position)
+    checked_lines(new_move_position).any? do |line|
+      line.all? do |line_position|
+        @board.get(line_position) == player.mark
       end
     end
   end
@@ -53,7 +53,7 @@ class ::TickTackToe::Game
   #
   # @return [Boolean]
   def final_move?(counter)
-    counter >= (@board.size**2 - 1)
+    counter >= ((@board.size**2) - 1)
   end
 
   # GOTCHA: As we have to use reverse range for calculation of right top to
@@ -62,7 +62,7 @@ class ::TickTackToe::Game
   #   regarding Ranges.
   using ::TickTackToe::Util::ReverseRange
 
-  def checked_lines(position)
+  def checked_lines(position) # rubocop:disable Metrics/AbcSize
     lines = [
       # Check vertical containing a cell with recent move of the player
       positions(position.x, 0...@board.size),
@@ -79,7 +79,6 @@ class ::TickTackToe::Game
 
     lines
   end
-
 
   # Check whether position belongs to top left to right bottom diagonal.
   #
@@ -103,7 +102,7 @@ class ::TickTackToe::Game
   # @param y [Fixnum, Range]
   #
   # @return [Enumerator<::TickTackToe::Position>]
-  def positions(x, y)
+  def positions(x, y) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
     if x.is_a?(Integer) && y.is_a?(Integer)
       # GOTCHA: as #positions method is intended to generate lines this
       #   particular branch does not used, but put here for unified behaviour

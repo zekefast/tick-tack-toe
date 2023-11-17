@@ -8,8 +8,8 @@ class ::TickTackToe::ValidationError < ::RuntimeError
   # @param coordinate_value [String]
   #
   # @return [::TickTackToe::ValidationError]
-  def self.coordinate_is_not_an_integer_error(coordinate_name, coordinate_value)
-    self.new("you must enter the x and y coordinates separated by spaces")
+  def self.coordinate_is_not_an_integer_error(_coordinate_name, _coordinate_value)
+    new("you must enter the x and y coordinates separated by spaces")
   end
 
   # @param board_size       [Integer]
@@ -17,7 +17,7 @@ class ::TickTackToe::ValidationError < ::RuntimeError
   # @param coordinate_value [Integer]
   #
   # @return [::TickTackToe::ValidationError]
-  def self.coordinate_are_outside_of_playable_area(board_size, coordinate_name, coordinate_value)
-    self.new("those coordinates are outside of the playable area")
+  def self.coordinate_are_outside_of_playable_area(_board_size, _coordinate_name, _coordinate_value)
+    new("those coordinates are outside of the playable area")
   end
 end

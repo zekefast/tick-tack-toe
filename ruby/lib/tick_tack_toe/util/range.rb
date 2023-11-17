@@ -21,14 +21,16 @@
 #   other methods like #to_a, #min, #max and others still misbehaive.
 module ::TickTackToe::Util::ReverseRange
   refine Range do
-    private def reverse?
-      first > last
-    end
-
-    def each(&block)
-      return first.downto(last, &block) if first.respond_to?(:pred) && reverse?
+    def each(&)
+      return first.downto(last, &) if first.respond_to?(:pred) && reverse?
 
       super
+    end
+
+    private
+
+    def reverse?
+      first > last
     end
   end
 end
