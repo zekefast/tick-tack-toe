@@ -1,3 +1,6 @@
 # IDE: Jetbrains IDEs
 /*.iml
 .idea
+
+# RSpec state
+ruby/spec/examples.txt
