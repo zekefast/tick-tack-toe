@@ -17,17 +17,20 @@ require "tick_tack_toe"
       end # with #{name} sign (`#{sign_param}`)
     end # sign to mark conversion
 
-    it_behaves_like "sign to mark conversion",
+    it_behaves_like \
+      "sign to mark conversion",
       ::TickTackToe::EMPTY_SIGN,
       ::TickTackToe::EMPTY_BOARD_CELL_MARK,
       "empty"
 
-    it_behaves_like "sign to mark conversion",
+    it_behaves_like \
+      "sign to mark conversion",
       ::TickTackToe::CROSS_SIGN,
       ::TickTackToe::CROSS_BOARD_CELL_MARK,
       "cross"
 
-    it_behaves_like "sign to mark conversion",
+    it_behaves_like \
+      "sign to mark conversion",
       ::TickTackToe::ZERO_SIGN,
       ::TickTackToe::ZERO_BOARD_CELL_MARK,
       "zero"
@@ -46,17 +49,20 @@ require "tick_tack_toe"
       end # with #{name} mark (`#{mark_param}`)
     end # mark to sign conversion
 
-    it_behaves_like "mark to sign conversion",
+    it_behaves_like \
+      "mark to sign conversion",
       ::TickTackToe::EMPTY_BOARD_CELL_MARK,
       ::TickTackToe::EMPTY_SIGN,
       "empty"
 
-    it_behaves_like "mark to sign conversion",
+    it_behaves_like \
+      "mark to sign conversion",
       ::TickTackToe::CROSS_BOARD_CELL_MARK,
       ::TickTackToe::CROSS_SIGN,
       "cross"
 
-    it_behaves_like "mark to sign conversion",
+    it_behaves_like \
+      "mark to sign conversion",
       ::TickTackToe::ZERO_BOARD_CELL_MARK,
       ::TickTackToe::ZERO_SIGN,
       "zero"
