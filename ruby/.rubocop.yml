@@ -30,6 +30,10 @@ Style/TrailingCommaInHashLiteral:
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: comma
 
+Style/CommentedKeyword:
+  Exclude:
+    - "spec/**/*_spec.rb"
+
 Layout/EmptyLines:
   Enabled: false
 
