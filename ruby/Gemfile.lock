@@ -54,8 +54,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  rspec
-  rubocop
+  rspec (>= 3.12.0)
+  rubocop (>= 1.57.2)
   rubocop-rspec (>= 2.25.0)
 
 CHECKSUMS
