@@ -39,6 +39,14 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.30.0)
       parser (>= 3.2.1.0)
+    rubocop-capybara (2.19.0)
+      rubocop (~> 1.41)
+    rubocop-factory_bot (2.24.0)
+      rubocop (~> 1.33)
+    rubocop-rspec (2.25.0)
+      rubocop (~> 1.40)
+      rubocop-capybara (~> 2.17)
+      rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
     unicode-display_width (2.5.0)
 
@@ -48,6 +56,7 @@ PLATFORMS
 DEPENDENCIES
   rspec
   rubocop
+  rubocop-rspec (>= 2.25.0)
 
 CHECKSUMS
   ast (2.4.2) sha256=1e280232e6a33754cde542bc5ef85520b74db2aac73ec14acef453784447cc12
@@ -67,6 +76,9 @@ CHECKSUMS
   rspec-support (3.12.1) sha256=f969b85d0068ff97bc47c9d6fc2bca9706d73406f2b4e5d3b346443d8734c8cf
   rubocop (1.57.2) sha256=8f679dfe42d7821dc61dafb17d14b1294343157a197b9f8a23720ca17fb9161b
   rubocop-ast (1.30.0) sha256=faad6452b1018fee0dd9e21a44445908e94ee2a4435932a9dae0e0740b6349b3
+  rubocop-capybara (2.19.0) sha256=fa329e0f185be313fa5dabd6056f83a718db7f4a259aa97fc287a40254899ccb
+  rubocop-factory_bot (2.24.0) sha256=3018d350315277200c31c98a5297c9d19463536c04bdeba0a75a512e3975e9f8
+  rubocop-rspec (2.25.0) sha256=083f8a0481dbb9969b2a9eae85670a454fe91d46812e6ec97b34e7f6227b99f3
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   unicode-display_width (2.5.0) sha256=7e7681dcade1add70cb9fda20dd77f300b8587c81ebbd165d14fd93144ff0ab4
 
