@@ -9,6 +9,9 @@
 #
 # See https://docs.rubocop.org/rubocop/configuration
 
+require:
+  - rubocop-rspec # Enable lints check for RSpec from "rubocop-rspec" gem
+
 AllCops:
   NewCops: enable
 
