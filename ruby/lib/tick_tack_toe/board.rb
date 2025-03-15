@@ -2,7 +2,7 @@
 
 # Internal representation of game board.
 #
-# Is is different from what user see in a way that it uses Integer marks 1 for cross and 0 for zero.
+# Is is different from what user see in a way that it uses Integer marks 1 for cross and -1 for zero.
 #
 # @see ::TickTackToe::Cli::BoardPrinter for user facing board representation
 class ::TickTackToe::Board
